@@ -175,9 +175,7 @@ vector<vector<vector<float>>> Convolution::forward(vector<vector<vector<float>>>
                             int input_height_index = j * stride + m - padding;
                             int input_width_index = k * stride + n - padding;
                             if (input_height_index >= 0 && input_height_index < input_height && input_width_index >= 0 && input_width_index < input_width)
-                            {
                                 sum += input_image[l][input_height_index][input_width_index] * weights[i][l][m][n];
-                            }
                         }
                     }
                 }

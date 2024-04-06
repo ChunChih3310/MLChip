@@ -13,7 +13,7 @@ C = *.cpp
 all:
 	clear
 	g++ -I . -I  $(INC_DIR) -L . -L $(LIB_DIR) -o $(O) $(C) $(LIB) $(RPATH)
-	./run
+	echo "Usage: ./run <input_file>"
 
 cat:
 	clear

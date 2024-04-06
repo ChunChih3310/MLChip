@@ -36,7 +36,6 @@ class AlexNet
     FullyConnected fc7;
     ReLU relu7;
     FullyConnected fc8;
-    Softmax softmax;
 
 public:
     // AlexNet(string module_name);
@@ -66,8 +65,7 @@ AlexNet::AlexNet() : module_name("AlexNet"),
                      relu6("relu6"),
                      fc7("fc7", 4096, 4096),
                      relu7("relu7"),
-                     fc8("fc8", 4096, 1000),
-                     softmax("softmax")
+                     fc8("fc8", 4096, 1000)
 {
     /*
     Constructor of AlexNet module
@@ -135,8 +133,8 @@ vector<float> AlexNet::forward(vector<vector<vector<float>>> input_image)
     cout << "Output image size after fc8: " << output_image.size() << endl;
 
     // Softmax
-    output_image = this->softmax.forward(output_image);
-    cout << "Output image size after softmax: " << output_image.size() << endl;
+    // output_image = this->softmax.forward(output_image);
+    // cout << "Output image size after softmax: " << output_image.size() << endl;
 
     cout << "Forward pass of " << this->module_name << " done" << endl;
 
